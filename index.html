@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="a">anniu</button>
+</body>
+<script>
+    document.querySelector("#a").addEventListener("click",()=> {
+        fetch("/io/vehicle_management/ipms/sub_system/generate/token?userName=system", {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json;charset=utf-8",
+                "X-HW-ID":"zhiyi__io.vehicleManagement",
+				"X-HW-APPKEY":"MCA5NpRcTX9jZXhJnzKnmg=="
+            },
+            // body: JSON.stringify(body)
+        })
+            .then((res) => res.json())
+            .then(res => {
+                console.log(res)
+            })
+    })
+</script>
+</html>
